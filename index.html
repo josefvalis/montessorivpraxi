@@ -6,9 +6,9 @@
 
     <title>Montessori v praxi | Valtice</title>
 
-    <meta name="description" content="Montessori v praxi – hravé prostředí, kroužky, hernička, hlídání dětí a příměstské tábory ve Valticích.">
+    <meta name="description" content="Montessori v praxi – hlídání dětí, zájmové kroužky, hernička, příměstské tábory a další aktivity ve Valticích.">
 
-    <!-- Moderní, profesionální a přátelská typografie -->
+    <!-- Fonty -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
@@ -142,7 +142,7 @@
         }
 
         .hero {
-            max-width: 850px;
+            max-width: 1050px;
         }
 
         .logo {
@@ -170,7 +170,7 @@
         h1 {
             font-family: "Playfair Display", Georgia, serif;
 
-            font-size: clamp(42px, 7vw, 78px);
+            font-size: clamp(38px, 5.2vw, 66px);
 
             font-weight: 400;
 
@@ -179,6 +179,8 @@
             line-height: 1.1;
 
             margin-bottom: 30px;
+
+            white-space: nowrap;
         }
 
         .hero-text {
@@ -251,8 +253,12 @@
 
 
         /* =========================
-           LOGO HRAVÁ OÁZA
+           HRAVÁ OÁZA
         ========================= */
+
+        .oaza {
+            background: var(--cream);
+        }
 
         .oaza-logo {
             width: 170px;
@@ -262,15 +268,6 @@
             object-fit: contain;
 
             margin: 0 auto 25px;
-        }
-
-
-        /* =========================
-           HRAVÁ OÁZA
-        ========================= */
-
-        .oaza {
-            background: var(--cream);
         }
 
         .oaza-heading {
@@ -426,6 +423,30 @@
 
 
         /* =========================
+           KLIKACÍ OBRÁZKY
+        ========================= */
+
+        .zoom-link {
+            display: block;
+
+            cursor: zoom-in;
+
+            overflow: hidden;
+        }
+
+        .zoom-link img {
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+        }
+
+        .zoom-link:hover img {
+            transform: scale(1.015);
+            opacity: 0.92;
+        }
+
+
+        /* =========================
            TLAČÍTKA
         ========================= */
 
@@ -501,17 +522,29 @@
             overflow: hidden;
         }
 
+        .poster a {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+        }
+
         .poster img {
             width: 100%;
             height: 100%;
 
             object-fit: cover;
 
-            transition: transform 0.4s ease;
+            cursor: zoom-in;
+
+            transition:
+                transform 0.4s ease,
+                opacity 0.3s ease;
         }
 
         .poster:hover img {
-            transform: scale(1.02);
+            transform: scale(1.025);
+            opacity: 0.94;
         }
 
         .center {
@@ -662,6 +695,15 @@
 
             header {
                 min-height: calc(100vh - 55px);
+
+                padding-top: 65px;
+                padding-bottom: 65px;
+            }
+
+            h1 {
+                white-space: normal;
+
+                font-size: clamp(38px, 11vw, 58px);
             }
 
             section {
@@ -739,8 +781,10 @@
             Kontakty
         </a>
 
-        <a href="#hrava-oaza"
-           class="menu-button">
+        <a
+            href="#hrava-oaza"
+            class="menu-button"
+        >
             Přihlásit dítě
         </a>
 
@@ -768,8 +812,7 @@
         </div>
 
         <h1>
-            MONTESSORI<br>
-            V PRAXI
+            MONTESSORI V PRAXI
         </h1>
 
         <p class="hero-text">
@@ -852,6 +895,7 @@
 
                 </div>
 
+
                 <div class="photos">
 
                     <div class="photo-placeholder">
@@ -915,12 +959,20 @@
 
                 </div>
 
+
                 <div class="schedule">
 
-                    <img
-                        src="images/rozvrh.png"
-                        alt="Rozvrh zájmových kroužků"
+                    <a
+                        href="images/rozvrh.png"
+                        target="_blank"
+                        class="zoom-link"
+                        title="Kliknutím zvětšit rozvrh"
                     >
+                        <img
+                            src="images/rozvrh.png"
+                            alt="Rozvrh zájmových kroužků"
+                        >
+                    </a>
 
                 </div>
 
@@ -964,6 +1016,7 @@
                     </a>
 
                 </div>
+
 
                 <div class="photos three">
 
@@ -1037,6 +1090,7 @@
 
                 </div>
 
+
                 <div class="single-image">
 
                     <img
@@ -1089,28 +1143,48 @@
 
             <div class="poster">
 
-                <img
-                    src="images/netabor-1.png"
-                    alt="Netábor 1"
+                <a
+                    href="images/netabor-1.png"
+                    target="_blank"
+                    title="Kliknutím zvětšit"
                 >
+                    <img
+                        src="images/netabor-1.png"
+                        alt="Netábor 1"
+                    >
+                </a>
 
             </div>
 
+
             <div class="poster">
 
-                <img
-                    src="images/netabor-2.png"
-                    alt="Netábor 2"
+                <a
+                    href="images/netabor-2.png"
+                    target="_blank"
+                    title="Kliknutím zvětšit"
                 >
+                    <img
+                        src="images/netabor-2.png"
+                        alt="Netábor 2"
+                    >
+                </a>
 
             </div>
 
+
             <div class="poster">
 
-                <img
-                    src="images/netabor-3.png"
-                    alt="Netábor 3"
+                <a
+                    href="images/netabor-3.png"
+                    target="_blank"
+                    title="Kliknutím zvětšit"
                 >
+                    <img
+                        src="images/netabor-3.png"
+                        alt="Netábor 3"
+                    >
+                </a>
 
             </div>
 
@@ -1180,7 +1254,7 @@
                 <p>
                     Instagram:
                     <a
-                        href="#"
+                        href="https://www.instagram.com/michaelavalisova/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -1190,15 +1264,15 @@
 
                 <p>
                     Telefon:
-                    <a href="tel:+420000000000">
-                        +420 000 000 000
+                    <a href="tel:+420732104237">
+                        +420 732 104 237
                     </a>
                 </p>
 
                 <p>
                     E-mail:
-                    <a href="mailto:email@example.cz">
-                        email@example.cz
+                    <a href="mailto:michaelavalis@gmail.com">
+                        michaelavalis@gmail.com
                     </a>
                 </p>
 
@@ -1210,7 +1284,9 @@
                 <iframe
                     src="https://www.google.com/maps?q=nám.+Svobody+22,+Valtice&output=embed"
                     loading="lazy"
-                    allowfullscreen>
+                    allowfullscreen
+                    title="Montessori v praxi – náměstí Svobody 22, Valtice"
+                >
                 </iframe>
 
             </div>
