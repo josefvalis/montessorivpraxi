@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -122,7 +123,7 @@
                     rgba(250,248,242,0.88),
                     rgba(250,248,242,0.96)
                 ),
-                url("images/uvod.jpg") center/cover;
+                url("images/uvod.jpeg") center/cover;
         }
 
         .hero {
@@ -221,12 +222,56 @@
 
 
         /* =========================
+           LOGO HRAVÁ OÁZA
+        ========================= */
+
+        .oaza-logo {
+            width: 170px;
+            max-height: 110px;
+            object-fit: contain;
+
+            margin: 0 auto 25px;
+        }
+
+
+        /* =========================
            HRAVÁ OÁZA
         ========================= */
 
         .oaza {
             background: var(--cream);
         }
+
+        .oaza-heading {
+            text-align: center;
+            margin-bottom: 65px;
+        }
+
+        .oaza-heading .small-title {
+            display: block;
+
+            text-transform: uppercase;
+            letter-spacing: 4px;
+
+            font-size: 13px;
+
+            color: var(--gold);
+
+            margin-bottom: 15px;
+        }
+
+        .oaza-heading h2 {
+            font-size: clamp(34px, 5vw, 54px);
+
+            font-weight: normal;
+
+            line-height: 1.2;
+        }
+
+
+        /* =========================
+           SLUŽBY
+        ========================= */
 
         .service {
             padding: 70px 0;
@@ -424,6 +469,15 @@
 
 
         /* =========================
+           PŘIHLÁŠENÍ
+        ========================= */
+
+        .registration {
+            background: var(--cream);
+        }
+
+
+        /* =========================
            KONTAKTY
         ========================= */
 
@@ -531,6 +585,10 @@
 
             section {
                 padding: 70px 20px;
+            }
+
+            .oaza-logo {
+                width: 145px;
             }
 
             .service-grid {
@@ -649,18 +707,28 @@
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="oaza-heading">
 
-            <span>Hravá oáza</span>
+            <img
+                src="images/logo-hravaoaza.png"
+                alt="Hravá Oáza"
+                class="oaza-logo"
+            >
+
+            <span class="small-title">
+                Montessori v praxi
+            </span>
 
             <h2>
-                Čas pro hru, objevování a radost
+                HRAVÁ OÁZA
             </h2>
 
         </div>
 
 
-        <!-- HLÍDÁNÍ DĚTÍ -->
+        <!-- =====================
+             HLÍDÁNÍ DĚTÍ
+        ====================== -->
 
         <div class="service">
 
@@ -693,15 +761,19 @@
 
                     <div class="photo-placeholder">
 
-                        <img src="images/hlidani-1.jpg"
-                             alt="Hlídání dětí">
+                        <img
+                            src="images/hlidani-1.jpeg"
+                            alt="Hlídání dětí"
+                        >
 
                     </div>
 
                     <div class="photo-placeholder">
 
-                        <img src="images/hlidani-2.jpg"
-                             alt="Hlídání dětí">
+                        <img
+                            src="images/hlidani-2.png"
+                            alt="Hlídání dětí"
+                        >
 
                     </div>
 
@@ -712,7 +784,9 @@
         </div>
 
 
-        <!-- ZÁJMOVÉ KROUŽKY -->
+        <!-- =====================
+             ZÁJMOVÉ KROUŽKY
+        ====================== -->
 
         <div class="service">
 
@@ -743,8 +817,10 @@
 
                 <div class="schedule">
 
-                    <img src="images/rozvrh.jpg"
-                         alt="Rozvrh zájmových kroužků">
+                    <img
+                        src="images/rozvrh.png"
+                        alt="Rozvrh zájmových kroužků"
+                    >
 
                 </div>
 
@@ -753,7 +829,9 @@
         </div>
 
 
-        <!-- HERNIČKA -->
+        <!-- =====================
+             HERNIČKA
+        ====================== -->
 
         <div class="service">
 
@@ -786,22 +864,28 @@
 
                     <div class="photo-placeholder">
 
-                        <img src="images/hernicka-1.jpg"
-                             alt="Hernička">
+                        <img
+                            src="images/hernicka-1.jpeg"
+                            alt="Hernička"
+                        >
 
                     </div>
 
                     <div class="photo-placeholder">
 
-                        <img src="images/hernicka-2.jpg"
-                             alt="Hernička">
+                        <img
+                            src="images/hernicka-2.jpeg"
+                            alt="Hernička"
+                        >
 
                     </div>
 
                     <div class="photo-placeholder">
 
-                        <img src="images/hernicka-3.jpg"
-                             alt="Hernička">
+                        <img
+                            src="images/hernicka-3.png"
+                            alt="Hernička"
+                        >
 
                     </div>
 
@@ -812,7 +896,9 @@
         </div>
 
 
-        <!-- PŘÍMĚSTSKÉ TÁBORY -->
+        <!-- =====================
+             PŘÍMĚSTSKÉ TÁBORY
+        ====================== -->
 
         <div class="service">
 
@@ -843,8 +929,10 @@
 
                 <div class="single-image">
 
-                    <img src="images/tabory.jpg"
-                         alt="Příměstské tábory">
+                    <img
+                        src="images/tabory.jpeg"
+                        alt="Příměstské tábory"
+                    >
 
                 </div>
 
@@ -886,22 +974,28 @@
 
             <div class="poster">
 
-                <img src="images/netabor-1.jpg"
-                     alt="Netábor 1">
+                <img
+                    src="images/netabor-1.png"
+                    alt="Netábor 1"
+                >
 
             </div>
 
             <div class="poster">
 
-                <img src="images/netabor-2.jpg"
-                     alt="Netábor 2">
+                <img
+                    src="images/netabor-2.png"
+                    alt="Netábor 2"
+                >
 
             </div>
 
             <div class="poster">
 
-                <img src="images/netabor-3.jpg"
-                     alt="Netábor 3">
+                <img
+                    src="images/netabor-3.png"
+                    alt="Netábor 3"
+                >
 
             </div>
 
@@ -925,7 +1019,10 @@
      PŘIHLÁŠENÍ
 ========================= -->
 
-<section id="prihlasit">
+<section
+    id="prihlasit"
+    class="registration"
+>
 
     <div class="container">
 
@@ -947,8 +1044,10 @@
 
         <div class="center">
 
-            <a href="#"
-               class="button">
+            <a
+                href="#"
+                class="button"
+            >
                 Přihlásit dítě
             </a>
 
@@ -963,7 +1062,10 @@
      KONTAKTY
 ========================= -->
 
-<section class="contacts" id="kontakty">
+<section
+    class="contacts"
+    id="kontakty"
+>
 
     <div class="container">
 
@@ -998,8 +1100,10 @@
 
                 <p>
                     Instagram:
-                    <a href="#"
-                       target="_blank">
+                    <a
+                        href="#"
+                        target="_blank"
+                    >
                         @michaelavalisova
                     </a>
                 </p>
