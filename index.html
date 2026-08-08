@@ -8,10 +8,10 @@
 
     <meta name="description" content="Montessori v praxi – hlídání dětí, zájmové kroužky, hernička, příměstské tábory a další aktivity ve Valticích.">
 
-    <!-- Fonty -->
+    <!-- Moderní bezpatkový font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
 
@@ -34,7 +34,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 90px;
+            scroll-padding-top: 85px;
         }
 
         body {
@@ -71,7 +71,7 @@
             justify-content: center;
             align-items: center;
 
-            padding: 17px 20px;
+            padding: 14px 20px;
         }
 
         .menu-inner {
@@ -86,10 +86,10 @@
 
         .menu-inner a {
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 600;
 
             text-transform: uppercase;
-            letter-spacing: 1.6px;
+            letter-spacing: 1.5px;
 
             color: var(--text);
 
@@ -123,7 +123,7 @@
         ========================= */
 
         header {
-            min-height: calc(100vh - 60px);
+            min-height: calc(88vh - 55px);
 
             display: flex;
             align-items: center;
@@ -131,27 +131,29 @@
 
             text-align: center;
 
-            padding: 80px 20px;
+            padding: 40px 20px 55px;
 
             background:
                 linear-gradient(
                     rgba(250,248,242,0.88),
-                    rgba(250,248,242,0.96)
+                    rgba(250,248,242,0.95)
                 ),
                 url("images/uvod.jpeg") center/cover;
         }
 
         .hero {
             max-width: 1050px;
+
+            transform: translateY(-25px);
         }
 
         .logo {
-            width: 130px;
-            height: 130px;
+            width: 118px;
+            height: 118px;
 
             object-fit: contain;
 
-            margin: 0 auto 30px;
+            margin: 0 auto 18px;
         }
 
         .eyebrow {
@@ -159,26 +161,26 @@
 
             letter-spacing: 4px;
 
-            font-size: 12px;
-            font-weight: 500;
+            font-size: 11px;
+            font-weight: 600;
 
             color: var(--gold);
 
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         h1 {
-            font-family: "Playfair Display", Georgia, serif;
+            font-family: "DM Sans", Arial, sans-serif;
 
-            font-size: clamp(38px, 5.2vw, 66px);
+            font-size: clamp(36px, 4.7vw, 60px);
 
-            font-weight: 400;
+            font-weight: 600;
 
-            letter-spacing: 1px;
+            letter-spacing: 2px;
 
-            line-height: 1.1;
+            line-height: 1.05;
 
-            margin-bottom: 30px;
+            margin-bottom: 22px;
 
             white-space: nowrap;
         }
@@ -190,7 +192,9 @@
 
             color: var(--text-light);
 
-            font-size: 17px;
+            font-size: 16px;
+
+            line-height: 1.75;
         }
 
 
@@ -199,7 +203,7 @@
         ========================= */
 
         section {
-            padding: 100px 20px;
+            padding: 82px 20px;
         }
 
         .container {
@@ -211,7 +215,7 @@
         .section-title {
             text-align: center;
 
-            margin-bottom: 55px;
+            margin-bottom: 48px;
         }
 
         .section-title span {
@@ -226,23 +230,25 @@
 
             color: var(--gold);
 
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .section-title h2 {
-            font-family: "Playfair Display", Georgia, serif;
+            font-family: "DM Sans", Arial, sans-serif;
 
-            font-size: clamp(34px, 5vw, 54px);
+            font-size: clamp(30px, 4.3vw, 48px);
 
-            font-weight: 400;
+            font-weight: 500;
 
-            line-height: 1.2;
+            letter-spacing: 0.4px;
+
+            line-height: 1.15;
         }
 
         .intro {
             max-width: 760px;
 
-            margin: 0 auto 60px;
+            margin: 0 auto 50px;
 
             text-align: center;
 
@@ -261,19 +267,19 @@
         }
 
         .oaza-logo {
-            width: 170px;
+            width: 165px;
 
-            max-height: 110px;
+            max-height: 105px;
 
             object-fit: contain;
 
-            margin: 0 auto 25px;
+            margin: 0 auto 18px;
         }
 
         .oaza-heading {
             text-align: center;
 
-            margin-bottom: 65px;
+            margin-bottom: 48px;
         }
 
         .oaza-heading .small-title {
@@ -288,17 +294,19 @@
 
             color: var(--gold);
 
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .oaza-heading h2 {
-            font-family: "Playfair Display", Georgia, serif;
+            font-family: "DM Sans", Arial, sans-serif;
 
-            font-size: clamp(34px, 5vw, 54px);
+            font-size: clamp(30px, 4.3vw, 48px);
 
-            font-weight: 400;
+            font-weight: 500;
 
-            line-height: 1.2;
+            letter-spacing: 0.4px;
+
+            line-height: 1.15;
         }
 
 
@@ -307,7 +315,7 @@
         ========================= */
 
         .service {
-            padding: 70px 0;
+            padding: 58px 0;
 
             border-bottom: 1px solid var(--border);
         }
@@ -321,7 +329,7 @@
 
             grid-template-columns: 1fr 1fr;
 
-            gap: 55px;
+            gap: 50px;
 
             align-items: center;
         }
@@ -344,19 +352,21 @@
             font-size: 11px;
             font-weight: 600;
 
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .service h3 {
-            font-family: "Playfair Display", Georgia, serif;
+            font-family: "DM Sans", Arial, sans-serif;
 
-            font-size: 38px;
+            font-size: 34px;
 
-            font-weight: 400;
+            font-weight: 500;
 
-            line-height: 1.2;
+            letter-spacing: 0.2px;
 
-            margin-bottom: 20px;
+            line-height: 1.15;
+
+            margin-bottom: 18px;
         }
 
         .service p {
@@ -364,7 +374,7 @@
 
             font-size: 15px;
 
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
 
@@ -392,7 +402,6 @@
             overflow: hidden;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
         }
@@ -453,7 +462,7 @@
         .button {
             display: inline-block;
 
-            padding: 12px 25px;
+            padding: 11px 23px;
 
             border: 1px solid var(--gold);
 
@@ -461,7 +470,7 @@
 
             text-transform: uppercase;
 
-            letter-spacing: 1.4px;
+            letter-spacing: 1.3px;
 
             font-size: 11px;
             font-weight: 600;
@@ -485,7 +494,7 @@
         .schedule {
             background: var(--white);
 
-            padding: 20px;
+            padding: 18px;
 
             border: 1px solid var(--border);
         }
@@ -511,7 +520,7 @@
 
             gap: 25px;
 
-            margin: 50px 0 35px;
+            margin: 45px 0 32px;
         }
 
         .poster {
@@ -565,7 +574,7 @@
 
             grid-template-columns: 1fr 1fr;
 
-            gap: 60px;
+            gap: 55px;
 
             align-items: stretch;
         }
@@ -579,13 +588,15 @@
         }
 
         .contact-info h3 {
-            font-family: "Playfair Display", Georgia, serif;
+            font-family: "DM Sans", Arial, sans-serif;
 
-            font-size: 36px;
+            font-size: 32px;
 
-            font-weight: 400;
+            font-weight: 500;
 
-            margin-bottom: 20px;
+            line-height: 1.2;
+
+            margin-bottom: 18px;
         }
 
         .contact-info p {
@@ -607,7 +618,7 @@
         }
 
         .map {
-            min-height: 400px;
+            min-height: 380px;
 
             border: 1px solid var(--border);
 
@@ -620,7 +631,7 @@
             width: 100%;
             height: 100%;
 
-            min-height: 400px;
+            min-height: 380px;
 
             border: 0;
         }
@@ -631,7 +642,7 @@
         ========================= */
 
         footer {
-            padding: 35px 20px 30px;
+            padding: 30px 20px 26px;
 
             text-align: center;
 
@@ -645,7 +656,7 @@
         .back-to-top {
             display: inline-block;
 
-            margin-bottom: 18px;
+            margin-bottom: 15px;
 
             padding: 8px 18px;
 
@@ -684,7 +695,7 @@
             .menu-inner {
                 justify-content: flex-start;
 
-                gap: 25px;
+                gap: 24px;
 
                 width: max-content;
             }
@@ -694,30 +705,46 @@
             }
 
             header {
-                min-height: calc(100vh - 55px);
+                min-height: 78vh;
 
-                padding-top: 65px;
-                padding-bottom: 65px;
+                padding: 42px 20px 52px;
+            }
+
+            .hero {
+                transform: translateY(-10px);
+            }
+
+            .logo {
+                width: 105px;
+                height: 105px;
+
+                margin-bottom: 16px;
             }
 
             h1 {
                 white-space: normal;
 
-                font-size: clamp(38px, 11vw, 58px);
+                font-size: clamp(34px, 10vw, 52px);
+
+                line-height: 1.05;
             }
 
             section {
-                padding: 70px 20px;
+                padding: 62px 20px;
             }
 
             .oaza-logo {
                 width: 145px;
             }
 
+            .service {
+                padding: 45px 0;
+            }
+
             .service-grid {
                 grid-template-columns: 1fr;
 
-                gap: 35px;
+                gap: 32px;
             }
 
             .service:nth-child(even) .service-grid {
@@ -742,12 +769,17 @@
             }
 
             .service h3 {
-                font-size: 31px;
+                font-size: 29px;
+            }
+
+            .contact-info h3 {
+                font-size: 29px;
             }
 
             .hero-text {
-                font-size: 16px;
+                font-size: 15px;
             }
+
         }
 
     </style>
@@ -895,7 +927,6 @@
 
                 </div>
 
-
                 <div class="photos">
 
                     <div class="photo-placeholder">
@@ -959,7 +990,6 @@
 
                 </div>
 
-
                 <div class="schedule">
 
                     <a
@@ -968,10 +998,12 @@
                         class="zoom-link"
                         title="Kliknutím zvětšit rozvrh"
                     >
+
                         <img
                             src="images/rozvrh.png"
                             alt="Rozvrh zájmových kroužků"
                         >
+
                     </a>
 
                 </div>
@@ -1016,7 +1048,6 @@
                     </a>
 
                 </div>
-
 
                 <div class="photos three">
 
@@ -1090,7 +1121,6 @@
 
                 </div>
 
-
                 <div class="single-image">
 
                     <img
@@ -1138,7 +1168,6 @@
             a vysvětlit, komu jsou určeny.
         </p>
 
-
         <div class="posters">
 
             <div class="poster">
@@ -1148,14 +1177,15 @@
                     target="_blank"
                     title="Kliknutím zvětšit"
                 >
+
                     <img
                         src="images/netabor-1.png"
                         alt="Netábor 1"
                     >
+
                 </a>
 
             </div>
-
 
             <div class="poster">
 
@@ -1164,14 +1194,15 @@
                     target="_blank"
                     title="Kliknutím zvětšit"
                 >
+
                     <img
                         src="images/netabor-2.png"
                         alt="Netábor 2"
                     >
+
                 </a>
 
             </div>
-
 
             <div class="poster">
 
@@ -1180,16 +1211,17 @@
                     target="_blank"
                     title="Kliknutím zvětšit"
                 >
+
                     <img
                         src="images/netabor-3.png"
                         alt="Netábor 3"
                     >
+
                 </a>
 
             </div>
 
         </div>
-
 
         <div class="center">
 
@@ -1232,9 +1264,7 @@
 
         </div>
 
-
         <div class="contact-grid">
-
 
             <div class="contact-info">
 
@@ -1277,7 +1307,6 @@
                 </p>
 
             </div>
-
 
             <div class="map">
 
