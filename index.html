@@ -1,14 +1,933 @@
+```html
 <!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Můj web</title>
+
+    <title>Montessori v praxi | Valtice</title>
+
+    <meta name="description" content="Montessori v praxi – hravé prostředí, kroužky, hernička, hlídání dětí a příměstské tábory ve Valticích.">
+
+    <style>
+        /* =========================
+           ZÁKLAD
+        ========================= */
+
+        :root {
+            --gold: #b28a3e;
+            --gold-light: #d8bd79;
+            --cream: #faf8f2;
+            --cream-dark: #f1ede2;
+            --text: #3d392f;
+            --text-light: #716b5d;
+            --white: #ffffff;
+            --border: #e5dece;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                linear-gradient(
+                    rgba(250,248,242,0.88),
+                    rgba(250,248,242,0.96)
+                ),
+                url("images/uvod.jpg") center/cover;
+        }
+
+        .hero {
+            max-width: 850px;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            margin: 0 auto 30px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 13px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            font-weight: normal;
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+            margin: 0 auto 35px;
+            color: var(--text-light);
+            font-size: 18px;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .navigation a {
+            font-size: 14px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border-bottom: 1px solid var(--gold-light);
+            padding-bottom: 4px;
+        }
+
+
+        /* =========================
+           OBECNÉ SEKCE
+        ========================= */
+
+        section {
+            padding: 100px 20px;
+        }
+
+        .container {
+            width: min(1100px, 100%);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(34px, 5vw, 54px);
+            font-weight: normal;
+            line-height: 1.2;
+        }
+
+        .intro {
+            max-width: 760px;
+            margin: 0 auto 60px;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           O NÁS
+        ========================= */
+
+        .about {
+            background: var(--white);
+        }
+
+
+        /* =========================
+           HLAVNÍ KATEGORIE
+        ========================= */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .category {
+            min-height: 250px;
+            padding: 50px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border: 1px solid var(--border);
+            background: var(--cream);
+            transition: transform 0.3s ease;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+        }
+
+        .category span {
+            color: var(--gold);
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .category h3 {
+            font-size: 34px;
+            font-weight: normal;
+            margin: 10px 0;
+        }
+
+        .category p {
+            color: var(--text-light);
+        }
+
+
+        /* =========================
+           HRAVÁ OÁZA
+        ========================= */
+
+        .oaza {
+            background: var(--cream);
+        }
+
+        .service {
+            padding: 70px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .service:last-child {
+            border-bottom: none;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .service:nth-child(even) .service-grid {
+            direction: rtl;
+        }
+
+        .service:nth-child(even) .service-content {
+            direction: ltr;
+        }
+
+        .service-title {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .service h3 {
+            font-size: 38px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .service p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .photos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .photos.three {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .photo-placeholder {
+            background: var(--cream-dark);
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a69d8c;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .single-image {
+            min-height: 350px;
+            background: var(--cream-dark);
+        }
+
+        .single-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            object-fit: cover;
+        }
+
+
+        /* =========================
+           TLAČÍTKA
+        ========================= */
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .button:hover {
+            background: var(--gold);
+            color: white;
+        }
+
+
+        /* =========================
+           ROZVRH
+        ========================= */
+
+        .schedule {
+            background: var(--white);
+            padding: 20px;
+            border: 1px solid var(--border);
+        }
+
+        .schedule img {
+            width: 100%;
+            height: auto;
+        }
+
+
+        /* =========================
+           NETÁBORY
+        ========================= */
+
+        .netabory {
+            background: var(--white);
+        }
+
+        .posters {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 50px 0 35px;
+        }
+
+        .poster {
+            background: var(--cream-dark);
+            aspect-ratio: 2 / 3;
+            overflow: hidden;
+        }
+
+        .poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+
+        /* =========================
+           KONTAKTY
+        ========================= */
+
+        .contacts {
+            background: var(--cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: stretch;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-info h3 {
+            font-size: 36px;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .contact-info a {
+            color: var(--gold);
+        }
+
+        .map {
+            min-height: 400px;
+            border: 1px solid var(--border);
+            background: var(--cream-dark);
+        }
+
+        .map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: 0;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 35px 20px;
+            text-align: center;
+            background: var(--text);
+            color: #e9e4d8;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           MOBIL
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            header {
+                min-height: 80vh;
+            }
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .service:nth-child(even) .service-grid {
+                direction: ltr;
+            }
+
+            .photos.three {
+                grid-template-columns: 1fr;
+            }
+
+            .posters {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation {
+                gap: 18px;
+            }
+
+            .service h3 {
+                font-size: 31px;
+            }
+        }
+    </style>
 </head>
+
+
 <body>
 
-    <h1>Ahoj!</h1>
-    <p>Tohle je můj první web na GitHubu.</p>
+
+<!-- =========================
+     ÚVOD
+========================= -->
+
+<header id="top">
+
+    <div class="hero">
+
+        <!-- Nahraď logo.png vlastním logem -->
+        <img src="images/logo.png"
+             alt="Montessori v praxi"
+             class="logo">
+
+        <div class="eyebrow">
+            Valtice
+        </div>
+
+        <h1>
+            MONTESSORI<br>
+            V PRAXI
+        </h1>
+
+        <p class="hero-text">
+            Místo, kde děti mohou objevovat svět vlastním tempem,
+            s respektem, radostí a přirozenou zvídavostí.
+        </p>
+
+        <nav class="navigation">
+            <a href="#o-nas">O nás</a>
+            <a href="#nabizime">Co nabízíme</a>
+            <a href="#kontakty">Kontakty</a>
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     O NÁS
+========================= -->
+
+<section class="about" id="o-nas">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>O nás</span>
+            <h2>Montessori v každodenním životě</h2>
+        </div>
+
+        <p class="intro">
+            Zde můžete napsat krátké představení Montessori centra,
+            jeho myšlenky, přístupu k dětem a toho, proč centrum vzniklo.
+            Text může být osobní, přirozený a stručný.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CO NABÍZÍME
+========================= -->
+
+<section id="nabizime">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Co nabízíme</span>
+            <h2>Dvě cesty, jedno místo</h2>
+        </div>
+
+        <div class="categories">
+
+            <a href="#hrava-oaza" class="category">
+                <span>Pro děti</span>
+                <h3>HRAVÁ OÁZA</h3>
+                <p>
+                    Hlídání, kroužky, hernička a příměstské tábory.
+                </p>
+            </a>
+
+            <a href="#netabory" class="category">
+                <span>Pro děti i dospělé</span>
+                <h3>NETÁBORY</h3>
+                <p>
+                    Kurzy, workshopy a další aktivity.
+                </p>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HRAVÁ OÁZA
+========================= -->
+
+<section class="oaza" id="hrava-oaza">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Hravá oáza</span>
+            <h2>Čas pro hru, objevování a radost</h2>
+        </div>
+
+
+        <!-- 1. HLÍDÁNÍ DĚTÍ -->
+
+        <div class="service">
+
+            <div class="service-grid">
+
+                <div class="service-content">
+
+                    <div class="service-title">
+                        01
+                    </div>
+
+                    <h3>HLÍDÁNÍ DĚTÍ</h3>
+
+                    <p>
+                        Krátký text o hlídání dětí. Zde můžete uvést
+                        pro jaké děti je služba určena, kdy probíhá
+                        a co mohou rodiče očekávat.
+                    </p>
+
+                    <a href="#" class="button">
+                        Přihlásit se
+                    </a>
+
+                </div>
+
+                <div class="photos">
+
+                    <div class="photo-placeholder">
+                        <img src="images/hlidani-1.jpg"
+                             alt="Hlídání dětí">
+                    </div>
+
+                    <div class="photo-placeholder">
+                        <img src="images/hlidani-2.jpg"
+                             alt="Hlídání dětí">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2. ZÁJMOVÉ KROUŽKY -->
+
+        <div class="service">
+
+            <div class="service-grid">
+
+                <div class="service-content">
+
+                    <div class="service-title">
+                        02
+                    </div>
+
+                    <h3>ZÁJMOVÉ KROUŽKY</h3>
+
+                    <p>
+                        Nabídka kroužků pro děti v prostředí,
+                        kde je prostor pro vlastní tempo,
+                        tvořivost a radost z objevování.
+                    </p>
+
+                    <a href="#" class="button">
+                        Přihlásit se
+                    </a>
+
+                </div>
+
+                <div class="schedule">
+
+                    <!-- Nahraď souborem s rozvrhem -->
+                    <img src="images/rozvrh.jpg"
+                         alt="Rozvrh zájmových kroužků">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3. HERNIČKA -->
+
+        <div class="service">
+
+            <div class="service-grid">
+
+                <div class="service-content">
+
+                    <div class="service-title">
+                        03
+                    </div>
+
+                    <h3>HERNIČKA</h3>
+
+                    <p>
+                        Bezpečné a inspirativní místo pro společný
+                        čas dětí a rodičů. Prostor pro hru,
+                        setkávání a objevování.
+                    </p>
+
+                    <a href="#" class="button">
+                        Přihlásit se
+                    </a>
+
+                </div>
+
+                <div class="photos three">
+
+                    <div class="photo-placeholder">
+                        <img src="images/hernicka-1.jpg"
+                             alt="Hernička">
+                    </div>
+
+                    <div class="photo-placeholder">
+                        <img src="images/hernicka-2.jpg"
+                             alt="Hernička">
+                    </div>
+
+                    <div class="photo-placeholder">
+                        <img src="images/hernicka-3.jpg"
+                             alt="Hernička">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4. PŘÍMĚSTSKÉ TÁBORY -->
+
+        <div class="service">
+
+            <div class="service-grid">
+
+                <div class="service-content">
+
+                    <div class="service-title">
+                        04
+                    </div>
+
+                    <h3>PŘÍMĚSTSKÉ TÁBORY</h3>
+
+                    <p>
+                        Dny plné dobrodružství, tvoření, pohybu
+                        a společných zážitků. Prostor, kde si děti
+                        užijí prázdniny naplno.
+                    </p>
+
+                    <a href="#" class="button">
+                        Přihlásit se
+                    </a>
+
+                </div>
+
+                <div class="single-image">
+
+                    <img src="images/tabory.jpg"
+                         alt="Příměstské tábory">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     NETÁBORY
+========================= -->
+
+<section class="netabory" id="netabory">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Netábory</span>
+            <h2>Kurzy, workshopy a setkávání</h2>
+        </div>
+
+        <p class="intro">
+            Krátký úvodní text k nabídce netáborů.
+            Můžete zde představit jednotlivé aktivity
+            a vysvětlit, komu jsou určeny.
+        </p>
+
+
+        <div class="posters">
+
+            <div class="poster">
+                <img src="images/netabor-1.jpg"
+                     alt="Netábor 1">
+            </div>
+
+            <div class="poster">
+                <img src="images/netabor-2.jpg"
+                     alt="Netábor 2">
+            </div>
+
+            <div class="poster">
+                <img src="images/netabor-3.jpg"
+                     alt="Netábor 3">
+            </div>
+
+        </div>
+
+        <div class="center">
+
+            <a href="#" class="button">
+                Přihlásit se
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     KONTAKTY
+========================= -->
+
+<section class="contacts" id="kontakty">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Kontakty</span>
+            <h2>Najdete nás ve Valticích</h2>
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <h3>
+                    Bc. Michaela Vališová
+                </h3>
+
+                <p>
+                    Montessori v praxi
+                </p>
+
+                <p>
+                    nám. Svobody 22<br>
+                    691 42 Valtice
+                </p>
+
+                <p>
+                    Instagram:
+                    <a href="#" target="_blank">
+                        @michaelavalisova
+                    </a>
+                </p>
+
+                <p>
+                    Telefon:
+                    <a href="tel:+420000000000">
+                        +420 000 000 000
+                    </a>
+                </p>
+
+                <p>
+                    E-mail:
+                    <a href="mailto:email@example.cz">
+                        email@example.cz
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="map">
+
+                <!--
+                    ZDE VLOŽ GOOGLE MAPS EMBED.
+                    Google Maps → Sdílet → Vložit mapu → zkopírovat iframe.
+                -->
+
+                <iframe
+                    src="https://www.google.com/maps?q=nám.+Svobody+22,+Valtice&output=embed"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © Montessori v praxi · Valtice
+
+</footer>
+
 
 </body>
 </html>
+```
